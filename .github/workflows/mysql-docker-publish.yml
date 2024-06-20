@@ -22,6 +22,7 @@ env:
   REGISTRY: docker.io
   # Replace with your Docker Hub username and desired image name
   IMAGE_NAME: alexandergarbuz/dev-ops-utils-mysql-shared
+  IMAGE_VERSION: v1.0.0
 
 jobs:
   build:
@@ -80,6 +81,7 @@ jobs:
           tags: |
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_VERSION }}
       # Uncomment if you want to put additional tag wtih branch name
       #      ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.ref_name }}
           labels: ${{ steps.meta.outputs.labels }}
