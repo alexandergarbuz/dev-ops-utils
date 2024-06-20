@@ -18,7 +18,7 @@ docker build -t mysql-shared .
 Then you need to execute run command
 
 ```
-docker run -i -d -p 3307:3307 --name mysql-shared-container mysql-shared
+docker run -d -p 3307:3307 --name mysql-shared-container mysql-shared
 
 ```
 
@@ -36,7 +36,7 @@ A complete command looks like this:
 ```
 mkdir C:\tmp\docker\mysql
 
-docker run -i -d -v "C:\tmp\docker\mysql:/var/lib/mysql" -p 3307:3307 --name mysql-shared-container mysql-shared
+docker run -d -v "C:\tmp\docker\mysql:/var/lib/mysql" -p 3307:3307 --name mysql-shared-container mysql-shared
 
 ```
 This can be used for many situations. For example, when you need to run integration testing for large data driven application during your application build cycle. 
