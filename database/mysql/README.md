@@ -1,40 +1,19 @@
-# Resume Service is a Spring Boot & Spring JPA project
+# MySQL Shared Server
 
-Simple project that builds a web site using Spring Boot and JPA
+Simple template implementation for MySQL datbase server deployed in Docker container.
+
+You can specify the port that you need it to run on and custom database initialization script that will be executed after container is started.
+
+You can also specify the custom location for the database files in case you may need to back them up after you finish using your container.
 
 To execute run the following commands
 
 ```
 
- docker build .
+mkdir C:\tmp\docker\mysql
 
- docker build --tag=resume-service .
+docker build -t mysql-shared .
 
- docker run -it -p 80:80 resume-service
-
-```
-To run both web application and MySQL run the following commands
-
+docker run -i -d -v "C:\tmp\docker\mysql:/var/lib/mysql" -p 3307:3307 --name mysql-shared-container mysql-shared
 
 ```
-
- docker compose build
- 
- docker compose up
-
-```
-
-For additional information on Docker checkout these links
-
-* [Installing Docker](https://docs.docker.com/desktop/install/windows-install/)
-
-* [Overview of get started](https://docs.docker.com/guides/get-started/)
-
-* [Overview of the get started guide](https://docs.docker.com/get-started/)
-
-* [Docker file syntax reference](https://docs.docker.com/reference/dockerfile/)
-
-* [Packaging your software](https://docs.docker.com/build/building/packaging/)
-
-* [Containerize a Java application](https://docs.docker.com/language/java/containerize/)
-
