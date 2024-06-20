@@ -13,5 +13,7 @@ $title = "Docker PHP Set Up Template";
 
 <h1><?php echo $title?></h1>
 
+<a href="./viewData.php">View data from MySQL database</a>
+
 </body>
 </html>
