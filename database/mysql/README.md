@@ -43,4 +43,12 @@ This can be used for many situations. For example, when you need to run integrat
 
 
 
-<i>Being able to stop the container, replace the DB files by running COPY command and then starting the container back up will be much faster than running complicated init scripts with a bunch of insert statements.</i>
+Being able to stop the container, replace the DB files by running `COPY` command and then starting the container back up will be much faster than running complicated init scripts with a bunch of insert statements.
+
+For additional information on MySQL and Docker please visit
+
+* [MySQL in Docker Hub](https://hub.docker.com/_/mysql/)
+
+* [Accessing data Spring and MySQL](https://spring.io/guides/gs/accessing-data-mysql/)
+
+* [Docker and Java Applications](https://docs.docker.com/language/java/)
