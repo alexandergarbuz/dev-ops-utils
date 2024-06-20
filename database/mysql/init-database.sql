@@ -10,5 +10,5 @@ CREATE TABLE IF NOT EXISTS User (
 
 
 INSERT INTO User (username, email) VALUES
-('john_doe', 'john@example.com'),
-('jane_smith', 'jane@example.com');
+('john_doe', 'john_doe@example.com'),
+('jane_smith', 'jane_smith@example.com');
