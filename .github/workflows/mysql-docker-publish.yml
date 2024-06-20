@@ -21,7 +21,7 @@ env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: docker.io
   # Replace with your Docker Hub username and desired image name
-  IMAGE_NAME: alexandergarbuz/dev-ops-utils-mysql-shared
+  IMAGE_NAME: alexandergarbuz/dev-ops-utils-mysql
   IMAGE_VERSION: v1.0.0
 
 jobs:
