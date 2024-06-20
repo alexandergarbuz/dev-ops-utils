@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libjpeg-dev \
     libfreetype6-dev \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install gd pdo_mysql \
+    && docker-php-ext-install gd mysqli pdo_mysql \
     && pecl install xdebug \
     && docker-php-ext-enable xdebug \
     && apt-get clean \

@@ -1,15 +1,11 @@
 version: '3.8'
 services:
-  mysql:
+  mysql-service:
     build:
       context: .
       dockerfile: Dockerfile
     container_name: mysql-shared-container
-    environment:
-      MYSQL_ROOT_PASSWORD: pass
-      MYSQL_DATABASE: Test_DB
-      MYSQL_USER: alex
-      MYSQL_PASSWORD: garbuz
+    env_file: "../../.env"
     ports:
       - "3307:3307"
     volumes:

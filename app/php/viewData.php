@@ -7,44 +7,45 @@
 <body>
 
 <?php
-$host = 'localhost';
-$port = '3307'; // Change to your MySQL port if different
-$dbname = 'Test_DB';
-$username = 'root';
-$password = 'pass';
 
-// Connect to MySQL database
-$conn = mysqli_connect($host, $username, $password, $dbname, $port);
+$host = getenv('MYSQL_HOST');
+$port = getenv('MYSQL_PORT');
+$dbname = getenv('MYSQL_DATABASE');
+$username = getenv('MYSQL_USER');
+$password = getenv('MYSQL_PASSWORD');
 
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+try {
+    // Set DSN (Data Source Name)
+    $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
 
-// SQL query to fetch users
-$sql = "SELECT * FROM User";
-$result = mysqli_query($conn, $sql);
+    $pdo = new PDO($dsn, $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $sql = "SELECT * FROM User";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// Display users in a table
-if (mysqli_num_rows($result) > 0) {
-    echo '<h2>User List</h2>';
-    echo '<table>';
-    echo '<tr><th>ID</th><th>Username</th><th>Email</th></tr>';
-    while ($row = mysqli_fetch_assoc($result)) {
-        echo '<tr>';
-        echo '<td>' . htmlspecialchars($row['id']) . '</td>';
-        echo '<td>' . htmlspecialchars($row['username']) . '</td>';
-        echo '<td>' . htmlspecialchars($row['email']) . '</td>';
-        echo '</tr>';
+    if (count($users) > 0) {
+        echo '<h2>User List</h2>';
+        echo '<table>';
+        echo '<tr><th>ID</th><th>Username</th><th>Email</th></tr>';
+        foreach ($users as $user) {
+            echo '<tr>';
+            echo '<td>' . htmlspecialchars($user['id']) . '</td>';
+            echo '<td>' . htmlspecialchars($user['username']) . '</td>';
+            echo '<td>' . htmlspecialchars($user['email']) . '</td>';
+            echo '</tr>';
+        }
+        echo '</table>';
+    } else {
+        echo 'No users found.';
     }
-    echo '</table>';
-} else {
-    echo 'No users found.';
-}
 
-// Close connection
-mysqli_close($conn);
+} catch (PDOException $e) {
+    die("Error: " . $e->getMessage());
+}
 ?>
+
 
 </body>
 </html>
