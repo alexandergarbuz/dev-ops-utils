@@ -11,5 +11,5 @@ CREATE TABLE IF NOT EXISTS User (
 
 INSERT INTO User (username, email) VALUES
 ('Docker User', 'dockerhub@isawesome.com'),
-('My SQL User', 'my@sql.com'),
+('MySQL User', 'my@sql.com'),
 ('GitHub User', 'git@hub.com');
