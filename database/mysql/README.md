@@ -9,7 +9,7 @@ You can also specify the custom location for the database files in case you may 
 First, you have to build an image
 
 ```
-docker build -t alexandergarbuz/dev-ops-utils-mysql-shared .
+docker build -t alexandergarbuz/dev-ops-utils-mysql .
 
 ```
 
@@ -18,7 +18,7 @@ docker build -t alexandergarbuz/dev-ops-utils-mysql-shared .
 Then you need to execute run command
 
 ```
-docker run -d -p 3307:3307 --network=shared-network --name mysql-shared-container --env-file=../../.env alexandergarbuz/dev-ops-utils-mysql-shared
+docker run -d -p 3307:3307 --network=shared-network --name mysql-container --env-file=../../.env alexandergarbuz/dev-ops-utils-mysql
 
 ```
 
@@ -36,7 +36,7 @@ A complete command looks like this:
 ```
 mkdir C:\tmp\docker\mysql
 
-docker run -d -v "C:\tmp\docker\mysql:/var/lib/mysql" -p 3307:3307 --network=shared-network --name mysql-shared-container --env-file=../../.env alexandergarbuz/dev-ops-utils-mysql-shared
+docker run -d -v "C:\tmp\docker\mysql:/var/lib/mysql" -p 3307:3307 --network=shared-network --name mysql-container --env-file=../../.env alexandergarbuz/dev-ops-utils-mysql
 
 ```
 This can be used for many situations. For example, when you need to run integration testing for large data driven application during your application build cycle. 
