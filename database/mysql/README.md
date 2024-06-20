@@ -13,7 +13,7 @@ docker build -t alexandergarbuz/dev-ops-utils-mysql .
 
 ```
 
-<b>mysql-shared</b> is the name of Docker image that needs to be build first.
+<b>alexandergarbuz/dev-ops-utils-mysql</b> is the name of Docker image that needs to be build first.
 
 Then you need to execute run command
 
@@ -22,7 +22,7 @@ docker run -d -p 3307:3307 --network=shared-network --name mysql-container --env
 
 ```
 
-That will run the <b>mysql-shared</b> image inside <b>mysql-shared-container</b> and make port <b>3307</b> available for outside world
+That will run the <b>alexandergarbuz/dev-ops-utils-mysql</b> image inside <b>mysql-container</b> and make port <b>3307</b> available for outside world
 
 If you want to persist the changed to the database(s) made inside your container you can share the local directory and point MySQL instance running inside container at this directory by adding the following flag <b>-v "C:\tmp\docker\mysql:/var/lib/mysql"</b>. 
 
