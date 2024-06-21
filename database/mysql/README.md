@@ -22,7 +22,9 @@ docker run -d -p 3307:3307 --network=shared-network --name mysql-container --env
 
 ```
 
-That will run the <b>alexandergarbuz/dev-ops-utils-mysql</b> image inside <b>mysql-container</b> and make port <b>3307</b> available for outside world
+That will run the <b>alexandergarbuz/dev-ops-utils-mysql</b> image inside <b>mysql-container</b> and make port <b>3307</b> available for outside world.
+
+Please note, that `shared-network` will need to be created prior running this command by running `docker network create shared-network`. If you not sure if this network alrady exists you can list existing networks by running `docker network ls` command. If you need to inspect if your container is already a part of this network you can run `docker network inspect shared-netowork` command and it will show you the containers on that network.
 
 If you want to persist the changed to the database(s) made inside your container you can share the local directory and point MySQL instance running inside container at this directory by adding the following flag <b>-v "C:\tmp\docker\mysql:/var/lib/mysql"</b>. 
 

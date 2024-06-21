@@ -23,6 +23,7 @@ docker run -d -p 80:80 --network=shared-network --name alexandergarbuz/dev-ops-u
 
 That will run the <b>alexandergarbuz/dev-ops-utils-php</b> image inside <b>alexandergarbuz/dev-ops-utils-php-container</b> and make port <b>80</b> available for outside world
 
+Please note, that `shared-network` will need to be created prior running this command by running `docker network create shared-network`. If you not sure if this network alrady exists you can list existing networks by running `docker network ls` command. If you need to inspect if your container is already a part of this network you can run `docker network inspect shared-netowork` command and it will show you the containers on that network.
 
 A complete command looks like this:
 
