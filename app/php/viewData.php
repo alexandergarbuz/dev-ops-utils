@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta>
-<title>Show Data</title>
+<title>Show MySQL Data</title>
 </head>
 <body>
 <h1>Displaying users from MySQL database:</h1>
