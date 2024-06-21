@@ -19,7 +19,7 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - ${{ env.CONTEXT_PATH }}/**
+      - 'database/mysql/**'
     # Publish semver tags as releases.
     tags: [ 'v*.*.*' ]
   pull_request:
