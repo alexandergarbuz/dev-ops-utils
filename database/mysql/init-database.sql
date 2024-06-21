@@ -10,6 +10,6 @@ CREATE TABLE IF NOT EXISTS User (
 
 
 INSERT INTO User (username, email) VALUES
-('Docker User', 'dockerhub@isawesome.com'),
+('Docker User', 'docker@hub.com'),
 ('MySQL User', 'my@sql.com'),
 ('GitHub User', 'git@hub.com');
