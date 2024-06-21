@@ -25,6 +25,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
 
+# Uncomment the following line if you want to change the Apache configuration to use port 8080
+#RUN sed -i 's/Listen 80/Listen 8080/' /etc/apache2/ports.conf /etc/apache2/sites-available/000-default.conf
+
 # Expose port 80 to the outside world
 EXPOSE 80
 
