@@ -5,7 +5,7 @@
 <title>Show Data</title>
 </head>
 <body>
-
+<h1>Displaying users from MySQL database:</h1>
 <?php
 
 $host = getenv('MYSQL_HOST');
