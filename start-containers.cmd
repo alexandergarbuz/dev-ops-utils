@@ -27,10 +27,6 @@ REM Create Docker network
 echo Creating Docker network...
 docker network create shared-network
 
-
-
-
-
 REM Launch MySQL container with --rm flag
 echo Launching MySQL container...
 cd ./database/mysql
