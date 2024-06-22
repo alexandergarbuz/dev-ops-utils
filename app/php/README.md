@@ -29,8 +29,6 @@ A complete command looks like this:
 
 
 ```
-mkdir C:\tmp\docker\mysql
-
 docker run -d -v ".:/var/www/html/public" -p 80:80 --network=shared-network --name php-container --env-file=../../.env alexandergarbuz/dev-ops-utils-php
 
 ```
